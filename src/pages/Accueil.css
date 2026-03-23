@@ -1,0 +1,88 @@
+.accueil {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* centré horizontalement */
+  justify-content: center; /* centré verticalement */
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #ffffff; /* clair */
+  color: #1f2937; /* gris foncé */
+}
+
+
+/* Dark mode */
+.dark .accueil {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+
+
+/* Icône cahier */
+.notebook-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  margin-bottom: 25px;
+}
+
+/* Titre */
+.accueil-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+/* Paragraphes */
+.accueil-text {
+  max-width: 600px;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  color: #4b5563; /* gris moyen */
+  line-height: 1.6;
+}
+
+/* Bouton bleu */
+.btn-learn {
+  margin-top: 30px;
+  padding: 16px 36px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #3b82f6; /* bleu */
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 18px rgba(59,130,246,0.4);
+}
+
+/* Hover */
+.btn-learn:hover {
+  background-color: #2563eb;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(59,130,246,0.5);
+}
+
+/* Active/clic */
+.btn-learn:active {
+  transform: scale(0.98);
+  box-shadow: 0 6px 18px rgba(59,130,246,0.4);
+}
+
+
+
+  .accueil-text {
+    color: #55657c;
+  }
+
+  .btn-learn {
+    box-shadow: 0 6px 18px rgba(59,130,246,0.6);
+  }
+
+  .btn-learn:hover {
+    box-shadow: 0 10px 25px rgba(59,130,246,0.8);
+  }

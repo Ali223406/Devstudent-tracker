@@ -1,0 +1,42 @@
+[
+  {
+    "name": "HTML",
+    "level": "Beginner",
+    "objectives": [
+      { "title": "Créer une page HTML simple", "done": false },
+      { "title": "Ajouter un titre et un paragraphe", "done": false }
+    ]
+  },
+  {
+    "name": "CSS",
+    "level": "Beginner",
+    "objectives": [
+      { "title": "Changer la couleur d’un texte", "done": false },
+      { "title": "Mettre un fond sur la page", "done": false }
+    ]
+  },
+  {
+    "name": "JavaScript",
+    "level": "Beginner",
+    "objectives": [
+      { "title": "Afficher une alerte", "done": false },
+      { "title": "Créer une fonction simple", "done": false }
+    ]
+  },
+  {
+    "name": "Git",
+    "level": "Beginner",
+    "objectives": [
+      { "title": "Installer Git", "done": false },
+      { "title": "Faire un commit", "done": false }
+    ]
+  },
+  {
+    "name": "React",
+    "level": "Beginner",
+    "objectives": [
+      { "title": "Créer un composant", "done": false },
+      { "title": "Afficher une liste d’éléments", "done": false }
+    ]
+  }
+]

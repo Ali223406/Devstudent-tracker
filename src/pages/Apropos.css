@@ -1,0 +1,61 @@
+/* Apropos.css */
+.apropos-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 12px;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.apropos-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.apropos-header p {
+  font-size: 1.2rem;
+  margin-bottom: 24px;
+}
+
+.apropos-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+/* Bouton Retour */
+.btn-return {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #3b82f6; /* bleu */
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-return:hover {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+}
+
+/* Mode sombre */
+body.dark .apropos-container {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+
+
+/* Mode sombre appliqué directement sur le container */
+/* Dark mode - fonctionne si un parent a la classe 'dark' */
+.dark .apropos-container {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
