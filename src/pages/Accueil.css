@@ -20,8 +20,8 @@
 
 /* Icône cahier */
 .notebook-icon {
-  width: 60px;
-  height: 60px;
+  width: 200px;
+  height: 150px;
   border-radius: 12px;
   object-fit: cover;
   box-shadow: 0 4px 15px rgba(0,0,0,0.15);
@@ -33,15 +33,17 @@
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 20px;
+  color: rgba(2, 75, 177, 0.521);
   line-height: 1.2;
 }
+
 
 /* Paragraphes */
 .accueil-text {
   max-width: 600px;
   margin-bottom: 15px;
   font-size: 1.1rem;
-  color: #4b5563; /* gris moyen */
+  color: #0c0c0c; /* gris moyen */
   line-height: 1.6;
 }
 
@@ -84,5 +86,5 @@
   }
 
   .btn-learn:hover {
-    box-shadow: 0 10px 25px rgba(59,130,246,0.8);
+    box-shadow: 0 10px 25px rgba(7, 28, 63, 0.8);
   }

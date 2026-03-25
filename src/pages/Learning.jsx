@@ -6,19 +6,19 @@ export default function Learning() {
   const { topic } = useParams();
 
   const topics = [
-    { name: "Bases du Web", path: "bases-web", icon: "🌐", desc: "HTML, CSS et structure de sites web" },
-    { name: "JavaScript", path: "javascript", icon: "💻", desc: "Programmation dynamique et logique web" },
-    { name: "React", path: "react", icon: "⚛️", desc: "Créer des interfaces interactives modernes" },
-    { name: "Environnement", path: "environnement", icon: "🛠️", desc: "Outils, Git, Node et workflow dev" }
+    { name: "Bases du Web", path: "bases-web", desc: "HTML, CSS et structure de sites web" },
+    { name: "JavaScript", path: "javascript",  desc: "Programmation dynamique et logique web" },
+    { name: "React", path: "react", desc: "Créer des interfaces interactives modernes" },
+    { name: "Environnement", path: "environnement", desc: "Outils, Git, Node et workflow dev" }
   ];
 
   return (
     <div className="learning-container">
 
       {/* Titre */}
-      <h1 className="learning-title">
-        📘 Learning {topic ? `- ${topic}` : ""}
-      </h1>
+      <h2 className="learning-title">
+         Learning {topic ? `- ${topic}` : ""}
+      </h2>
 
       {/* Intro */}
       <p className="learning-intro">

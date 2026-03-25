@@ -9,9 +9,8 @@ export default function Navbar() {
     <nav className="flex items-center justify-between px-8 py-4 bg-white dark:bg-gray-900 shadow-md">
 
       {/* Logo */}
-      <img src={notebookIcon} alt="Cahier Bleu" className="notebook-icon" />
-      <h1 className="text-2xl font-bold text-gray-800 dark:text-white">
-        DevTracker
+      <h1 className="flex items-center gap-2 text-2xl font-bold text-gray-800 dark:text-gray-200">
+        📘 DevStudent Tracker
       </h1>
 
       {/* Menu */}
@@ -21,7 +20,7 @@ export default function Navbar() {
           isActive ? "flex items-center gap-2 text-blue-500 font-semibold" : "flex items-center gap-2 hover:text-blue-500 transition"
         }>
           <FontAwesomeIcon icon={faHouse} />
-          Accueil
+        Home
         </NavLink>
 
         <NavLink to="/learning" className={({isActive}) =>
@@ -35,7 +34,7 @@ export default function Navbar() {
           isActive ? "flex items-center gap-2 text-blue-500 font-semibold" : "flex items-center gap-2 hover:text-blue-500 transition"
         }>
           <FontAwesomeIcon icon={faUser} />
-          À propos
+         About
         </NavLink>
 
 

@@ -6,24 +6,25 @@ import { useNavigate } from 'react-router-dom';
 
 
 export default function Accueil() {
+  const navigate = useNavigate();
  
   return (
      <div className="accueil">
-
-      {/* Icône cahier */}
-      <img src={notebookIcon} alt="Cahier Bleu" className="notebook-icon" />
+       <img src={notebookIcon} alt="Cahier Bleu" className="notebook-icon" />
+      
+     
 
       {/* Titre */}
-      <h1 className="accueil-title">Bienvenue sur DevStudent Tracker</h1>
+      <h3 className="accueil-title">Bienvenue sur DevStudent Tracker</h3>
 
       {/* Paragraphes */}
-      <p className="accueil-text">
+      <h4 className="accueil-text">
         Votre compagnon pour suivre votre progression en tant que développeur.
-      </p>
+      </h4>
 
-      <p className="accueil-text">
+      <h4 className="accueil-text">
         Commencez dès maintenant à ajouter vos compétences, objectifs et ressources pour organiser votre apprentissage !
-      </p>
+      </h4>
 
      
       {/* BOUTON */}

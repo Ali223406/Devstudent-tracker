@@ -5,21 +5,21 @@ export default function Apropos() {
   return (
     <div className="apropos-container">
       <div className="apropos-header">
-        <h1>📘 À propos de DevStudent Tracker</h1>
-        <p>
+        <h2> À propos de DevStudent Tracker</h2>
+        <h4>
           DevStudent Tracker est une application conçue pour vous aider à suivre votre progression
           en tant que développeur web et logiciel.
-        </p>
+        </h4>
       </div>
 
       <div className="apropos-content">
-        <p>
+        <h4>
           Organisez vos compétences, vos objectifs et vos ressources pour un apprentissage clair et efficace.
-        </p>
-        <p>
+        </h4>
+        <h4>
           Commencez dès maintenant à ajouter vos compétences, objectifs et ressources pour suivre
           votre évolution étape par étape.
-        </p>
+        </h4>
       </div>
 
       <Link to="/" className="btn-return">
