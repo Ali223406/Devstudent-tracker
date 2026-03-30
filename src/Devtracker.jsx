@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import './App.css'; // Garde ton style existant
+import './App.css';
 
 export default function DevTracker({ filter }) {
   // Compétences par topic
@@ -45,7 +45,6 @@ export default function DevTracker({ filter }) {
         ]
       }
     ],
-
     'javascript': [
       {
         name: 'JavaScript Basics',
@@ -103,7 +102,6 @@ export default function DevTracker({ filter }) {
         ]
       }
     ],
-
     'environnement': [
       {
         name: 'Git & GitHub',
@@ -147,8 +145,6 @@ export default function DevTracker({ filter }) {
         ]
       }
     ],
-    
-
     'react': [
       {
         name: 'React Components',
@@ -192,17 +188,19 @@ export default function DevTracker({ filter }) {
     ]
   };
 
-  // ⚡ UseEffect pour mettre à jour les skills à chaque changement de filter
   const [skills, setSkills] = useState([]);
-  useEffect(() => {
-    setSkills(skillsByTopic[filter] || []);
-  }, [filter]);
-
   const [newSkillName, setNewSkillName] = useState('');
   const [newSkillLevel, setNewSkillLevel] = useState('Beginner');
   const [newObjective, setNewObjective] = useState('');
   const [newResource, setNewResource] = useState('');
 
+  // Charger les skills de base au changement de filter
+  useEffect(() => {
+    // Clone pour ne pas modifier les données initiales
+    setSkills(skillsByTopic[filter] ? JSON.parse(JSON.stringify(skillsByTopic[filter])) : []);
+  }, [filter]);
+
+  // Ajouter compétence
   const addSkill = () => {
     if (!newSkillName) return;
     const skill = {
@@ -218,6 +216,21 @@ export default function DevTracker({ filter }) {
     setNewResource('');
   };
 
+  // Supprimer compétence
+  const removeSkill = (index) => {
+    const updated = [...skills];
+    updated.splice(index, 1);
+    setSkills(updated);
+  };
+
+  // Éditer nom ou niveau
+  const editSkill = (index, field, value) => {
+    const updated = [...skills];
+    updated[index][field] = value;
+    setSkills(updated);
+  };
+
+  // Ajouter objectif
   const addObjective = (index) => {
     if (!newObjective) return;
     const updated = [...skills];
@@ -226,6 +239,7 @@ export default function DevTracker({ filter }) {
     setNewObjective('');
   };
 
+  // Ajouter ressource
   const addResource = (index) => {
     if (!newResource) return;
     const updated = [...skills];
@@ -234,6 +248,7 @@ export default function DevTracker({ filter }) {
     setNewResource('');
   };
 
+  // Toggle checkbox objectif
   const toggleObjective = (s, o) => {
     const updated = [...skills];
     updated[s].objectives[o].done = !updated[s].objectives[o].done;
@@ -243,6 +258,7 @@ export default function DevTracker({ filter }) {
   return (
     <div className="devtracker-container">
       <div className="devtracker-content">
+        {/* Ajouter compétence */}
         <div className="add-skill">
           <input placeholder="Nom compétence" value={newSkillName} onChange={e => setNewSkillName(e.target.value)} />
           <select value={newSkillLevel} onChange={e => setNewSkillLevel(e.target.value)}>
@@ -255,34 +271,62 @@ export default function DevTracker({ filter }) {
           <button onClick={addSkill}>Ajouter compétence</button>
         </div>
 
-        {skills.map((skill, si) => (
-          <div key={si} className="skill-item">
-            <h3>{skill.name} - {skill.level}</h3>
+       {skills.map((skill, si) => (
+  <div key={si} className="skill-item">
+    {/* Éditer nom et niveau */}
+    <input value={skill.name} onChange={e => editSkill(si, 'name', e.target.value)} />
+    <select value={skill.level} onChange={e => editSkill(si, 'level', e.target.value)}>
+      <option>Beginner</option>
+      <option>Intermediate</option>
+      <option>Advanced</option>
+    </select>
 
-            <ul>
-              {skill.objectives.map((obj, oi) => (
-                <li key={oi}>
-                  <input type="checkbox" checked={obj.done} onChange={() => toggleObjective(si, oi)} />
-                  {obj.title}
-                </li>
-              ))}
-            </ul>
+    {/* Objectifs */}
+    <ul>
+      {skill.objectives.map((obj, oi) => (
+        <li key={oi}>
+          <input type="checkbox" checked={obj.done} onChange={() => toggleObjective(si, oi)} />
+          {obj.title}
+        </li>
+      ))}
+    </ul>
 
-            <input placeholder="Ajouter objectif" value={newObjective} onChange={e => setNewObjective(e.target.value)} />
-            <button onClick={() => addObjective(si)}>Ajouter objectif</button>
+    <div className="action-group">
+      <input 
+        className="input-small" 
+        placeholder="Ajouter objectif" 
+        value={newObjective} 
+        onChange={e => setNewObjective(e.target.value)} 
+      />
+      <button className="btn" onClick={() => addObjective(si)}>Ajouter objectif</button>
+    </div>
 
-            <ul>
-              {skill.resources.map((res, ri) => (
-                <li key={ri}>
-                  <a href={res.url} target="_blank" rel="noopener noreferrer">{res.title}</a>
-                </li>
-              ))}
-            </ul>
+    {/* Ressources */}
+    <ul>
+      {skill.resources.map((res, ri) => (
+        <li key={ri}>
+          <a href={res.url} target="_blank" rel="noopener noreferrer">{res.title}</a>
+        </li>
+      ))}
+    </ul>
 
-            <input placeholder="Ajouter ressource (URL)" value={newResource} onChange={e => setNewResource(e.target.value)} />
-            <button onClick={() => addResource(si)}>Ajouter ressource</button>
-          </div>
-        ))}
+    <div className="action-group">
+      <input 
+        className="input-small" 
+        placeholder="Ajouter ressource (URL)" 
+        value={newResource} 
+        onChange={e => setNewResource(e.target.value)} 
+      />
+      <button className="btn" onClick={() => addResource(si)}>Ajouter ressource</button>
+    </div>
+
+    {/* Supprimer compétence */}
+    <div className="action-group">
+      <button className="btn btn-delete" onClick={() => removeSkill(si)}>Supprimer compétence</button>
+    </div>
+  </div>
+))}
+
       </div>
     </div>
   );

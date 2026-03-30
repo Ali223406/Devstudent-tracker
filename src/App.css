@@ -71,6 +71,8 @@ h1 {
   box-shadow: 1px 1px 5px rgba(0,0,0,0.05);
 }
 
+
+
 /* Objectifs */
 .skill-item ul {
   list-style: none;
@@ -91,7 +93,7 @@ h1 {
 }
 
 .skill-item button {
-  background-color: #2ecc71;
+  background-color: #3498db;
   border: none;
   color: white;
   padding: 5px 10px;
@@ -100,7 +102,7 @@ h1 {
 }
 
 .skill-item button:hover {
-  background-color: #27ae60;
+  background-color: #3498db;
 }
 
 /* Ressources */
@@ -111,4 +113,51 @@ h1 {
 
 .skill-item a:hover {
   text-decoration: underline;
+}
+
+
+/* Boutons Ajouter uniforme */
+.btn-add {
+  padding: 10px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background-color: #1d4ed8; /* bleu uniforme */
+  transition: all 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 6px 18px rgba(29,78,216,0.4);
+}
+
+.btn-add:hover {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(29,78,216,0.5);
+}
+
+.btn-add:active {
+  transform: scale(0.98);
+  box-shadow: 0 6px 18px rgba(29,78,216,0.4);
+}
+
+/* Dark mode */
+.dark .btn-add {
+  background-color: #2563eb;
+  box-shadow: 0 6px 18px rgba(37,99,235,0.4);
+}
+.dark .btn-add:hover {
+  background-color: #1d4ed8;
+  box-shadow: 0 10px 25px rgba(37,99,235,0.5);
+}
+.action-group {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px; /* espace entre input et bouton */
+  align-items: center;
+}
+
+.input-small {
+  flex: 1;
+  padding: 4px;
 }
