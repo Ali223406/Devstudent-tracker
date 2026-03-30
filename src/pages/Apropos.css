@@ -1,29 +1,44 @@
-/* Apropos.css */
+/* Container principal */
 .apropos-container {
   max-width: 800px;
   margin: 40px auto;
   padding: 30px;
   border-radius: 12px;
-  background-color: var(--bg-light);
-  color: var(--text-dark);
+  background-color: var(--bg-light); /* clair */
+  color: var(--text-dark); /* texte noir par défaut */
   box-shadow: 0 6px 20px rgba(0,0,0,0.1);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.apropos-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 16px;
+/* Dark mode appliqué via parent .dark */
+.dark .apropos-container {
+  background-color: var(--bg-dark);
+  color: var(--text-light); /* texte blanc/gris clair */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
 }
 
+/* Header */
+.apropos-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+  color: #1d4ed8; /* bleu fixe, reste identique même en dark mode */
+}
+
+.apropos-header h4,
 .apropos-header p {
   font-size: 1.2rem;
   margin-bottom: 24px;
+  font-weight: 500;
+  color: inherit; /* s’adapte automatiquement selon le mode */
 }
 
-.apropos-content p {
+/* Content */
+.apropos-content h4 {
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 16px;
+  font-weight: 500;
+  color: inherit; /* s’adapte automatiquement selon le mode */
 }
 
 /* Bouton Retour */
@@ -44,18 +59,14 @@
   transform: translateY(-2px);
 }
 
-/* Mode sombre */
-body.dark .apropos-container {
-  background-color: var(--bg-dark);
-  color: var(--text-light);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
-}
-
-
-/* Mode sombre appliqué directement sur le container */
-/* Dark mode - fonctionne si un parent a la classe 'dark' */
-.dark .apropos-container {
-  background-color: var(--bg-dark);
-  color: var(--text-light);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+/* Responsive */
+@media (max-width: 768px) {
+  .apropos-header h2 {
+    font-size: 2rem;
+  }
+  .apropos-header h4,
+  .apropos-header p,
+  .apropos-content h4 {
+    font-size: 1rem;
+  }
 }

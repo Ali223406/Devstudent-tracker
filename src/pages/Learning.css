@@ -5,14 +5,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f9fafb;
-  color: #1f2937;
+  background-color: #f9fafb; /* light mode */
+  color: #1f2937; /* texte noir par défaut */
   transition: background 0.3s ease, color 0.3s ease;
 }
 
 .dark .learning-container {
-  background-color: #111827;
-  color: #f3f4f6;
+  background-color: #111827; /* dark mode */
+  color: #f3f4f6; /* texte blanc/gris clair */
 }
 
 /* Titre */
@@ -21,7 +21,7 @@
   font-weight: 700;
   margin-bottom: 1rem;
   text-align: center;
-  color : rgba(31, 62, 129, 0.623);
+  color: #1d4ed8; /* bleu bouton, reste identique */
 }
 
 /* Intro */
@@ -31,11 +31,7 @@
   text-align: center;
   margin-bottom: 3rem;
   line-height: 1.6;
-  color: #475569;
-}
-
-.dark .learning-intro {
-  color: #d1d5db;
+  color: inherit; /* s’adapte automatiquement au container */
 }
 
 /* Grid */
@@ -50,39 +46,37 @@
 
 /* Carte topic */
 .topic-card {
-  background-color: #e5e7eb;
+  background-color: #e5e7eb; /* light */
   border-radius: 1rem;
   padding: 1.5rem;
   text-align: center;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease, color 0.3s ease;
   position: relative;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  color: inherit; /* s’adapte automatiquement */
 }
 
 .dark .topic-card {
-  background-color: #1f2937;
-}
-
-.topic-card:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+  background-color: #1f2937; /* dark mode */
 }
 
 /* Icône */
 .topic-icon {
   font-size: 3rem;
   margin-bottom: 0.8rem;
+  color: inherit; /* s’adapte automatiquement */
 }
 
-/* Nom */
+/* Nom du topic */
 .topic-name {
   font-size: 1.3rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
+  color: #1d4ed8; /* reste bleu */
 }
 
 /* Description */
@@ -90,13 +84,14 @@
   font-size: 0.95rem;
   opacity: 0.75;
   margin-bottom: 1rem;
+  color: inherit; /* s’adapte automatiquement */
 }
 
 /* CTA */
 .topic-cta {
   margin-top: auto;
   font-weight: 600;
-  color: #4d78be;
+  color: #1d4ed8; /* reste bleu */
   font-size: 1rem;
   transition: transform 0.2s ease;
 }
@@ -112,10 +107,10 @@
   padding: 0.75rem 1.5rem;
   border-radius: 0.75rem;
   background-color: #d1d5db;
-  color: #1f2937;
+  color: #1f2a37;
   font-weight: 500;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease, color 0.3s ease;
 }
 
 .dark .btn-back {
@@ -135,7 +130,6 @@
 @media (max-width: 768px) {
   .learning-title {
     font-size: 2rem;
-    color : rgba(59,130,246,0.6);
   }
   .learning-intro {
     font-size: 1rem;

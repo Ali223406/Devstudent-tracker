@@ -5,7 +5,7 @@ import Accueil from './pages/Accueil';
 import Apropos from './pages/Apropos';
 import Learning from './pages/Learning';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './Navbar';
+import Navbar from './pages/Navbar';
 
 function App() {
   
