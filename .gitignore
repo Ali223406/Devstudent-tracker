@@ -23,3 +23,10 @@ dist-ssr
 *.sln
 *.sw?
 
+# Ignorer dossier Firebase et cache
+.firebase/
+node_modules/
+
+# Optionnel : logs
+firebase-debug.log
+
