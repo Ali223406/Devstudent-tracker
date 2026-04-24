@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';   // Import des hooks useState et useEffect pour gérer l'état et les effets de bord
+import { useState, useEffect } from 'react';   // Import des hooks useState et useEffect pour gérer l'état 
 import './App.css';   // Import du CSS pour le composant DevTracker
 
 export default function DevTracker({ filter }) {   // Composant fonctionnel pour afficher les compétences, objectifs et ressources

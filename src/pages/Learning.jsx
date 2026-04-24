@@ -5,7 +5,7 @@ import './Learning.css';              // Import du CSS pour la page d'apprentiss
 export default function Learning() {     // Composant fonctionnel pour la page d'apprentissage
   const { topic } = useParams();       // Récupération du paramètre "topic" de l'URL pour filtrer les compétences et objectifs
 
-  const topics = [
+  const topics = [    // Liste des catégories d'apprentissage avec leurs chemins et descriptions
     { name: "Bases du Web", path: "bases-web", desc: "HTML, CSS et structure de sites web" }, 
     { name: "JavaScript", path: "javascript",  desc: "Programmation dynamique et logique web" },
     { name: "React", path: "react", desc: "Créer des interfaces interactives modernes" },
@@ -13,7 +13,7 @@ export default function Learning() {     // Composant fonctionnel pour la page d
   ];
 
   return (         
-    <div className="learning-container">
+    <div className="learning-container">      
 
       {/* Titre */}
       <h2 className="learning-title">

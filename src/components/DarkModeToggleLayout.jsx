@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from 'react'; // Import des hooks useState et useEffect pour gérer l'état et les effets de bord dans le composant
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';  // Import du composant FontAwesomeIcon pour afficher les icônes de la bibliothèque Font Awesome
-import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';   // Import des icônes de lune et de soleil pour représenter les modes sombre et clair
+import React, { useState, useEffect } from 'react'; // Import des hooks useState et useEffect pour gérer l'état 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';  // Import du composant FontAwesomeIcon pour afficher les icônes
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';   // Import des icônes 
 
-const DarkModeToggleLayout = ({ children }) => {   // Composant fonctionnel qui enveloppe les enfants et fournit une fonctionnalité de bascule entre le mode sombre et le mode clair
-  const [isDarkMode, setIsDarkMode] = useState(false);   // État pour suivre si le mode sombre est activé ou non, initialisé à false (mode clair)
+const DarkModeToggleLayout = ({ children }) => {   // Composant fonctionnel pour gérer le thème sombre et clair
+  const [isDarkMode, setIsDarkMode] = useState(false);   // État pour suivre si le mode sombre est activé ou non, initialisé à false (mode clair par défaut)
 
-  useEffect(() => {    // Effet de bord pour charger le mode sombre enregistré dans le localStorage lors du montage du composant
+  useEffect(() => {    // Effet de bord pour récupérer le mode sombre enregistré dans le localStorage lors du chargement du composant
     const savedMode = localStorage.getItem('darkMode') === 'true';   // Récupération du mode sombre enregistré dans le localStorage et conversion en booléen
     setIsDarkMode(savedMode);
     if (savedMode) document.documentElement.classList.add('dark');  // Si le mode sombre est activé, ajouter la classe "dark" à l'élément racine pour appliquer les styles du mode sombre
   }, []);
 
-  useEffect(() => {   // Effet de bord pour mettre à jour le localStorage et les classes CSS lorsque l'état du mode sombre change
+  useEffect(() => {    // Effet de bord pour appliquer ou supprimer la classe "dark" sur l'élément racine en fonction de l'état isDarkMode et pour enregistrer le mode sombre dans le localStorage
     if (isDarkMode) {
       document.documentElement.classList.add('dark');
     } else {
