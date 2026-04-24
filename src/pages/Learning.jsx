@@ -1,18 +1,18 @@
-import DevTracker from "../Devtracker";
-import { useParams, Link } from 'react-router-dom';
-import './Learning.css';
+import DevTracker from "../Devtracker";    // Import du composant DevTracker pour afficher les compétences et objectifs
+import { useParams, Link } from 'react-router-dom';     // Import du hook useParams pour récupérer les paramètres de l'URL et du composant Link pour la navigation
+import './Learning.css';              // Import du CSS pour la page d'apprentissage
 
-export default function Learning() {
-  const { topic } = useParams();
+export default function Learning() {     // Composant fonctionnel pour la page d'apprentissage
+  const { topic } = useParams();       // Récupération du paramètre "topic" de l'URL pour filtrer les compétences et objectifs
 
   const topics = [
-    { name: "Bases du Web", path: "bases-web", desc: "HTML, CSS et structure de sites web" },
+    { name: "Bases du Web", path: "bases-web", desc: "HTML, CSS et structure de sites web" }, 
     { name: "JavaScript", path: "javascript",  desc: "Programmation dynamique et logique web" },
     { name: "React", path: "react", desc: "Créer des interfaces interactives modernes" },
-    { name: "Environnement", path: "environnement", desc: "Outils, Git, Node et workflow dev" }
+    { name: "Environnement", path: "environnement", desc: "Outils, Git, Node et workflow dev" }  
   ];
 
-  return (
+  return (         
     <div className="learning-container">
 
       {/* Titre */}

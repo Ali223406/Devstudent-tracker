@@ -1,8 +1,8 @@
 [
-  {
+  {     
     "name": "HTML",
     "level": "Beginner",
-    "objectives": [
+    "objectives": [      
       { "title": "Créer une page HTML simple", "done": false },
       { "title": "Ajouter un titre et un paragraphe", "done": false }
     ]

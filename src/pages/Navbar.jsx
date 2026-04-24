@@ -1,5 +1,5 @@
-import { NavLink } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { NavLink } from 'react-router-dom';  // import du liem fde navigation a parti de react router
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';    // on importe les icones
 import { faHouse, faBook, faUser } from '@fortawesome/free-solid-svg-icons';
 import './Navbar.css'; // Import du CSS
 
@@ -14,15 +14,15 @@ export default function Navbar() {
       {/* Menu */}
       <div className="navbar-menu">
         <NavLink to="/" className="navbar-link" activeclassname="active">
-          <FontAwesomeIcon icon={faHouse} /> Home
+          <FontAwesomeIcon icon={faHouse} /> Accueil
         </NavLink>
-
+       {/* lien vers learning */}
         <NavLink to="/learning" className="navbar-link" activeclassname="active">
-          <FontAwesomeIcon icon={faBook} /> Learning
+          <FontAwesomeIcon icon={faBook} /> Apprendre
         </NavLink>
-
+          {/* lien vers apropos */}
         <NavLink to="/apropos" className="navbar-link" activeclassname="active">
-          <FontAwesomeIcon icon={faUser} /> About
+          <FontAwesomeIcon icon={faUser} /> Apropos
         </NavLink>
       </div>
     </nav>

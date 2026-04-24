@@ -2,9 +2,9 @@
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{js,jsx,ts,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}",  // Configuration de Tailwind pour scanner les fichiers HTML et les fichiers JavaScript/JSX/TypeScript/TSX dans le dossier src afin de générer les classes CSS utilisées dans l'application
   ],
-  darkMode: 'class',
+  darkMode: 'class', // Activation du mode sombre basé sur une classe CSS (permet de basculer entre les thèmes clair et sombre en ajoutant ou supprimant la classe "dark" sur l'élément racine)
   theme: {
     extend: {
       colors: {

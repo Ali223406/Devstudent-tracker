@@ -1,9 +1,10 @@
-import { Link } from 'react-router-dom';
-import './Apropos.css';
+import { Link } from 'react-router-dom';  // Import du composant Link pour la navigation
+import './Apropos.css';      // Import du CSS pour la page à propos
 
-export default function Apropos() {
-  return (
-    <div className="apropos-container">
+export default function Apropos() {      // Composant fonctionnel pour la page à propos
+  return (            // Structure de la page à propos
+    <div className="apropos-container"> 
+      {/* En-tête */}
       <div className="apropos-header">
         <h2> À propos de DevStudent Tracker</h2>
         <h4>
@@ -11,7 +12,7 @@ export default function Apropos() {
           en tant que développeur web et logiciel.
         </h4>
       </div>
-
+        {/* Contenu principal */}
       <div className="apropos-content">
         <h4>
           Organisez vos compétences, vos objectifs et vos ressources pour un apprentissage clair et efficace.
@@ -21,7 +22,7 @@ export default function Apropos() {
           votre évolution étape par étape.
         </h4>
       </div>
-
+        {/* Lien de retour à l'accueil */}
       <Link to="/" className="btn-return">
         ← Retour à l'accueil
       </Link>
